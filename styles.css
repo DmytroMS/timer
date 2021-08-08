@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.field {
+  display: inline-block;
+  font-size: 20;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 50;
+}
