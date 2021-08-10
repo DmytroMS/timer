@@ -10,6 +10,7 @@ class CountdownTimer {
    
   }
   
+
     intervalId = setInterval(() => {
       const startTime = Date.now();
       const time = this.targetDate - startTime;
@@ -37,16 +38,37 @@ pad(value) {
   
 }
 
+let futureDate = 'Aug 09, 2021';
 
-new CountdownTimer({
+
+const timerStart = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Sep 17, 2021'),
+  targetDate: new Date(futureDate),     // new Date('Jun 09, 2021'),
 
 });
 
 
 
+function dateCheck(a, b) {
 
+  if (a < b) {
+    console.log("future-date", futureDate);
+    console.log("current-date", Date.now());
+    alert("Выберите дату в будущем");
+    return document.querySelector('#timer-1').textContent = 'Pls. choose the date in the future'; 
+  } 
+}
+
+dateCheck(Date.parse(futureDate), Date.now());
+ 
+
+
+//console.log(document.querySelector('#timer-1'))
+
+// const x = Date.parse(futureDate);
+// console.log('x', x);
+// const y = Date(x);
+// console.log(y);
 
 // /*
 //  * Оставшиеся дни: делим значение UTC на 1000 * 60 * 60 * 24, количество
